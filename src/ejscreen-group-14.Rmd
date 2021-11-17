@@ -22,6 +22,7 @@ ces <- read_csv(here("data", "ces3demographics.csv")) %>%
 
 ```{r}
 ggplot(data = ces) +
-  geom_point(aes( x = white_percent, y = ces_3_0_score))
+  geom_hex(aes( x = white_percent, y = ces_3_0_score)) +
+  labs(x = "Percent White", y = "CES 3-0 score", title = "Percentage White vs CES 3-0 Score")
 ```
 
