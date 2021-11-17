@@ -13,6 +13,6 @@ library(here)
 ```
 
 ```{r}
-demographics <- read_csv(here("data", "ces3demographics.csv"))
+ces <- read_csv(here("data", "ces3demographics.csv"))
 ```
 
