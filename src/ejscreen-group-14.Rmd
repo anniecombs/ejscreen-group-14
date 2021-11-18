@@ -23,6 +23,7 @@ ces <- read_csv(here("data", "ces3demographics.csv")) %>%
 ```{r}
 ggplot(data = ces) +
   geom_hex(aes( x = white_percent, y = ces_3_0_score)) +
-  labs(x = "Percent White", y = "CES 3-0 score", title = "Percentage White vs CES 3-0 Score")
+  labs(x = "Percent White", y = "CES 3-0 score", title = "Percentage White vs CES Score")
 ```
 
+**Figure 1: Percentage White vs CES Score.** Described above is the relationship between a college's percentage of white students and its CES score. Count is indicated by the color gradient of the hex plot. Schools with the highest percentage of white students had the lowest CES scores on average.
