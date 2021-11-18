@@ -1,0 +1,28 @@
+---
+title: "group_14_ca_ej"
+author: "Annie Combs" "Logan Ossentjuk"
+date: "November 17, 2021"
+output: html_document
+---
+
+### Set up
+```{r setup, include=FALSE}
+#installs necessary packages, sets 
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(janitor)
+library(here)
+```
+
+### Read In Data 
+```{r}
+ces <- read_csv(here("data", "ces3demographics.csv")) %>% #reads es3demographics.csv data frame into ces variable
+  clean_names() #convert column names to lower_snake_case
+```
+
+#Data Visualization
+```{r}
+ggplot(data = ces) +
+  geom_point(aes( x = white_percent, y = ces_3_0_score))
+```
+
