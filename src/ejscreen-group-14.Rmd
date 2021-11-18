@@ -1,0 +1,29 @@
+---
+title: "ejscreen-group-14"
+author: "Annie Combs" "Logan Ossentjuk"
+date: "November 17, 2021"
+output: html_document
+---
+
+```{r setup, include=TRUE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+library(tidyverse)
+library(janitor)
+library(here)
+```
+
+Add a new code chunk to create a basic ggplot2 scatterplot graph (with geom_point) showing % white (x-axis: white_percent, note: depending on your OS this column name might be simplified by janitor::clean_names() to just ‘white’ instead) versus CalEnviroScreen pollution burden score (y-axis: ces_3_0_score). Do not update / finalize the graph further - this is what you will both work on in the next steps. 
+
+### Read In Data 
+```{r}
+ces <- read_csv(here("data", "ces3demographics.csv")) %>% 
+  clean_names() #convert column names to lower_snake_case
+```
+
+```{r}
+ggplot(data = ces) +
+  geom_hex(aes( x = white_percent, y = ces_3_0_score)) +
+  labs(x = "Percent White", y = "CES 3-0 score", title = "Percentage White vs CES Score")
+```
+
+**Figure 1: Percentage White vs CES Score.** Described above is the relationship between a college's percentage of white students and its CES score. Count is indicated by the color gradient of the hex plot. Schools with the highest percentage of white students had the lowest CES scores on average.

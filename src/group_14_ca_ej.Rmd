@@ -7,7 +7,7 @@ output: html_document
 
 ### Set up
 ```{r setup, include=FALSE}
-#installs necessary packages, sets 
+#installs necessary packages
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(janitor)
@@ -22,7 +22,7 @@ ces <- read_csv(here("data", "ces3demographics.csv")) %>% #reads es3demographics
 
 #Data Visualization
 ```{r}
-ggplot(data = ces) +
-  geom_point(aes( x = white_percent, y = ces_3_0_score))
+ggplot(data = ces) + #Creates plot based on ces data frame
+  geom_point(aes( x = white_percent, y = ces_3_0_score)) #creates line graph displaying relationship between percent white and ces_3_0_score
 ```
 
