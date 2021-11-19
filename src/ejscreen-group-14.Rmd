@@ -26,4 +26,4 @@ ggplot(data = ces) +
   labs(x = "Percent White", y = "CES 3-0 score", title = "Percentage White vs CES Score")
 ```
 
-**Figure 1: Percentage White vs CES Score.** Described above is the relationship between a college's percentage of white students and its CES score. Count is indicated by the color gradient of the hex plot. Schools with the highest percentage of white students had the lowest CES scores on average.
+**Figure 1: Percentage White vs CES Score.** Described above is the relationship between a college's percentage of white students and its CES score. Count is indicated by the color gradient of the hex plot. Schools with the highest percentage of white students had the lowest CES scores on average. 
