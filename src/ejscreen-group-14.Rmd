@@ -7,7 +7,7 @@ output: html_document
 
 ### Set up 
 ```{r setup, include=TRUE}
-knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE) # Attach necessary packages
 library(tidyverse)
 library(janitor)
 library(here)
@@ -22,11 +22,11 @@ ces <- read_csv(here("data", "ces3demographics.csv")) %>%
 
 ### Data Visualization
 ```{r}
-ggplot(data = ces) +
-  geom_hex(aes( x = white_percent, y = ces_3_0_score)) +
-  scale_fill_gradient(low = "blue", high = "yellow") +
-  theme_minimal() +
-  labs(x = "Percent White Population", y = "CalEnviroScreen Pollution Score", title = "2010 US White Population Percentage vs CalEnviroScreen 3.0 Pollution Score")
+ggplot(data = ces) + # create a ggplot using ces data
+  geom_hex(aes( x = white_percent, y = ces_3_0_score)) + # create a hex plot compare percentage white with ces score
+  scale_fill_gradient(low = "blue", high = "yellow") + # create a fill gradient that moves from blue to yellow
+  theme_minimal() + # add a theme
+  labs(x = "Percent White Population", y = "CalEnviroScreen Pollution Score", title = "2010 US White Population Percentage vs CalEnviroScreen 3.0 Pollution Score") # add appropriate labels
 ```
 
 **Figure 1: Percentage White vs CES Score.** Described above is the relationship between a college's percentage of white students and its CES score. Count is indicated by the color gradient of the hex plot. Schools with the highest percentage of white students had the lowest CES scores on average. 
